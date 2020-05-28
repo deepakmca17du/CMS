@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('title')
-    TheSaaS — Blog with sidebar
+    Category {{$category->name}}
 @endsection
 
 @section('header')
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
 
-                    <h1>Latest Blog Posts</h1>
+                    <h1>{{$category->name}} - Blog Posts</h1>
                     <p class="lead-2 opacity-90 mt-6">Read and get updated on how we progress</p>
 
                 </div>
@@ -54,6 +54,7 @@
 
                         {{$posts->links()}}
                     </div>
+
 
                     @include('partials.sidebar')
 

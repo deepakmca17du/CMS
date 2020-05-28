@@ -1,4 +1,9 @@
 @extends('layouts.blog')
+<style>
+    .display-comment .display-comment {
+        margin-left: 40px
+    }
+</style>
 
 @section('title')
 {{$post->title}}
@@ -40,12 +45,10 @@
         <div class="container">
             {!! $post->content !!}
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="gap-xy-2 mt-6">
-                        @foreach($post->tags as $tag)
-                            <a class="badge badge-pill badge-secondary" href="#">{{$tag->name}}</a>
-                        @endforeach
-                    </div>
+                <div class="gap-xy-2 mt-6">
+                    @foreach($post->tags as $tag)
+                        <a class="badge badge-pill badge-secondary" href="{{route('blog.tag',$tag->id)}}">{{$tag->name}}</a>
+                    @endforeach
                 </div>
             </div>
 
@@ -66,7 +69,33 @@
 
 
                     <hr>
-
+                    <h4>Display Comments</h4>
+                    @include('partials.comments_replies', ['comments' => $post->comments, 'post_id' => $post->id])
+                    <hr />
+                    <h4>Add comment</h4>
+                    <form method="post" action="{{ route('comments.store') }}">
+                        @csrf
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" name="name" id="name" value="">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name">Email:</label>
+                                    <input type="text" class="form-control" name="email" id="email" value="">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="comment">Comment</label>
+                                    <textarea name="comment" id="comment" rows="5" cols="5" class="form-control"></textarea>
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-warning" value="Add Comment" />
+                        </div>
+                    </form>
 
 
 

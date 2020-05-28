@@ -88,6 +88,9 @@
                 </div>
 
             </form>
+
+
+
         </div>
     </div>
 
@@ -105,6 +108,7 @@
         $(document).ready(function() {
             $('.tags-selector').select2();
         });
+        
 
     </script>
 @endsection

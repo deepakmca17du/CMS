@@ -15,9 +15,14 @@ use App\Http\Controllers\Blog\PostsController;
 
 Route::get('/', 'WelcomeController@index');
 Route::get('blog/posts/{post}',[PostsController::class,'show'])->name('blog.show');
+Route::get('blog/categories/{category}',[PostsController::class,'category'])->name('blog.category');
+Route::get('blog/tags/{tag}',[PostsController::class,'tag'])->name('blog.tag');
+
 
 Auth::routes();
 
+Route::post('/comments/store', 'CommentsController@store')->name('comments.store');
+Route::post('/reply/store', 'CommentsController@replyStore')->name('reply.store');
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/home', 'HomeController@index')->name('home');
