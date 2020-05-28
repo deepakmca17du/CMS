@@ -1,79 +1,55 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## Project Description
+<p>Content Management System is a Blog Post Web Application that can be the
+   unified platform for the University students to write Blogs relating to
+   different subjects or topics that they are majoring in or otherwise based on
+   their interests, also giving them an opportunity to showcase their piece of
+   work to the larger audience as compared to the current system wherein their
+   work gets published only in the college magazines and gets limited to the
+   individual colleges or departments.
+</p>
+   
+## Project Screenshots 
 
+![WelcomePage](https://user-images.githubusercontent.com/31646033/83154656-04369c00-a11e-11ea-96de-6dce02301b90.jpg)
+<p align="center">User Interface of the Welcome Page</p>
+
+![SingleBlogPage](https://user-images.githubusercontent.com/31646033/83157884-b9b71e80-a121-11ea-8870-58531cf2526e.jpg)
+<p align="center">Single blog post view</p>
+
+![Add Comment](https://user-images.githubusercontent.com/31646033/83157894-bd4aa580-a121-11ea-911d-e4d12b455d39.png)
+<p align="center">Add comments on the post</p>
+
+![DisplayComment](https://user-images.githubusercontent.com/31646033/83157904-c0459600-a121-11ea-8050-c3534af0cbff.png)
+<p align="center">Reply on the existing post</p>
+
+
+![Posts Dashboard](https://user-images.githubusercontent.com/31646033/83156613-3ea13880-a120-11ea-9c69-a5ced696f2c3.png)
+<p align="center">Author Posts Dashboard depicting posts created by the author and various actions that can be taken</p>
+
+![CreatePostPage](https://user-images.githubusercontent.com/31646033/83157028-c2f3bb80-a120-11ea-9e40-b57a1d159b3b.png)
+<p align="center">The Create Post Page</p>
+
+![CategoriesDashboard](https://user-images.githubusercontent.com/31646033/83157042-c7b86f80-a120-11ea-8910-021bb36a5297.jpg)
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+Author Categories Dashboard depicting created categories and no.
+of posts linked to them as well as other functionalities to modify,
+delete and create new ones
 </p>
 
-## About Laravel
+![TagsDashboard](https://user-images.githubusercontent.com/31646033/83157068-cedf7d80-a120-11ea-8f64-813eb63ef1cf.jpg)
+<p align="center">
+Author Tags Dashboard depicting created tags and no. of posts linked to them as well as other functionalities to modify, delete and create new ones
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![TrashingPOsts](https://user-images.githubusercontent.com/31646033/83157544-5cbb6880-a121-11ea-8d7e-1fd45bfe9a9e.jpg)
+<p align="center">‘Success message’ after trashing a post by the author</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
+![POstsTrashed](https://user-images.githubusercontent.com/31646033/83157560-61801c80-a121-11ea-9b5a-b726cf18a6aa.jpg)
+<p align="center">
+Image showing the posts that are in Trash that can be restored or
+permanently deleted by the author
+</p>
+                  
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
