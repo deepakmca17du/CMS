@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Http\Requests\Posts\CreatePostsRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Post;
 use App\Tag;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -23,7 +26,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('posts',Post::all());
+        $user_id = Auth::id();
+        $posts = Post::all()->where('user_id',$user_id);
+        return view('posts.index')->with('posts',$posts);
     }
 
     /**
@@ -177,6 +182,24 @@ class PostsController extends Controller
         $post->restore();
 
         session()->flash('success','Post restored successfully.');
+
+        return redirect()->back();
+    }
+
+    public function approvePostDashboard()
+    {
+        $post = Post::all()->where('is_approved','false');
+
+        return view('posts.approve_posts')->with('posts',$post);
+    }
+
+    public function approvePost(Post $post)
+    {
+        $post->is_approved = true;
+        DB::table('comments')->where('post_id',$post->id)->delete();
+        $post->save();
+
+        session()->flash('success','Post approved!');
 
         return redirect()->back();
     }

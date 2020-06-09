@@ -47,7 +47,7 @@ Author Categories Dashboard depicting created categories and no.
 of posts linked to them as well as other functionalities to modify,
 delete and create new ones
 </strong>
-</p>>
+</p>
 <br>
 <hr>
 

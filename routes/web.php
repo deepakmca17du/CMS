@@ -13,7 +13,7 @@ use App\Http\Controllers\Blog\PostsController;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('blog/posts/{post}',[PostsController::class,'show'])->name('blog.show');
 Route::get('blog/categories/{category}',[PostsController::class,'category'])->name('blog.category');
 Route::get('blog/tags/{tag}',[PostsController::class,'tag'])->name('blog.tag');
@@ -38,4 +38,6 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::get('users','UsersController@index')->name('users.index');
     Route::put('users/profile','UsersController@update')->name('users.update-profile');
     Route::post('users/{user}/make-admin','UsersController@makeAdmin')->name('users.make-admin');
+    Route::get('approve-post-dashboard','PostsController@approvePostDashboard')->name('approve-post-dashboard');
+    Route::put('approve-post-dashboard/{post}/approve-post','PostsController@approvePost')->name('approve-posts');
 });

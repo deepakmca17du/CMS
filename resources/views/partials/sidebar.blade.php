@@ -2,8 +2,8 @@
     <div class="sidebar px-4 py-md-0">
 
         <h6 class="sidebar-title">Search</h6>
-        <form class="input-group" target="#" method="GET">
-            <input type="text" class="form-control" name="s" placeholder="Search">
+        <form class="input-group" action="" method="GET">
+            <input type="text" class="form-control" name="search" placeholder="Search" value="{{request()->query('search')}}">
             <div class="input-group-addon">
                 <span class="input-group-text"><i class="ti-search"></i></span>
             </div>

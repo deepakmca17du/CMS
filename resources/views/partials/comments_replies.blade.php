@@ -9,15 +9,20 @@
         <form method="post" action="{{ route('reply.store') }}">
             @csrf
             <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <input type="text" name="name" class="form-control" placeholder="Name" />
+                @if($post->is_approved)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Name" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="email" class="form-control" placeholder="Email" />
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="email" class="form-control" placeholder="Email" />
-                    </div>
-                </div>
-                <input type="text" name="comment" class="form-control" />
+                @else
+                    <input type="hidden" name="name" value="{{$post->user->name}}">
+                    <input type="hidden" name="email" value="{{$post->user->email}}">
+                @endif
+                <textarea name="comment" id="comment" rows="2" cols="5" class="form-control"></textarea>
                 <input type="hidden" name="post_id" value="{{ $post_id }}" />
                 <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
             </div>

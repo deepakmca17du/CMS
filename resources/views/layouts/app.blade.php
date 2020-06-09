@@ -64,7 +64,7 @@
                                     <a class="dropdown-item" href="{{ route('users.edit-profile') }}">
                                         My Profile
                                     </a>
-                                    
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -98,11 +98,6 @@
                     <div class="row">
                         <div class="col-md-4">
                             <ul class="list-group">
-                                @if(auth()->user()->isAdmin())
-                                    <li class="list-group-item">
-                                        <a href="{{route('users.index')}}">Users</a>
-                                    </li>
-                                @endif
                                 <li class="list-group-item">
                                     <a href="{{route('posts.index')}}">Posts</a>
                                 </li>
@@ -118,6 +113,17 @@
                                 <li class="list-group-item">
                                     <a href="{{route('trashed-posts.index')}}">Trashed Posts</a>
                                 </li>
+                            </ul>
+
+                            <ul class="list-group mt-5">
+                                @if(auth()->user()->isAdmin())
+                                    <li class="list-group-item">
+                                        <a href="{{route('users.index')}}">Users</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="{{route('approve-post-dashboard')}}">Approve Posts</a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                         <div class="col-md-8">

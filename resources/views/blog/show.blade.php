@@ -69,27 +69,41 @@
 
 
                     <hr>
-                    <h4>Display Comments</h4>
+                    @if($post->is_approved)
+                        <h4>Display Comments</h4>
+                    @else
+                        <h4>Feedback Received</h4>
+                    @endif
                     @include('partials.comments_replies', ['comments' => $post->comments, 'post_id' => $post->id])
                     <hr />
-                    <h4>Add comment</h4>
+                    @if($post->is_approved)
+                        <h4>Add comment</h4>
+                    @else
+                        <h4>Add Feedback</h4>
+                    @endif
                     <form method="post" action="{{ route('comments.store') }}">
                         @csrf
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="name">Name:</label>
-                                    <input type="text" class="form-control" name="name" id="name" value="">
+                            @if($post->is_approved)
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="name">Name:</label>
+                                        <input type="text" class="form-control" name="name" id="name" value="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="name">Email:</label>
+                                        <input type="text" class="form-control" name="email" id="email" value="">
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="name">Email:</label>
-                                    <input type="text" class="form-control" name="email" id="email" value="">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="comment">Comment</label>
-                                    <textarea name="comment" id="comment" rows="5" cols="5" class="form-control"></textarea>
-                                    <input type="hidden" name="post_id" value="{{ $post->id }}" />
-                                </div>
+                            @else
+                                <input type="hidden" name="name" id="name" value="{{ $post->user->name }}" />
+                                <input type="hidden" name="email" id="email" value="{{ $post->user->email }}" />
+                            @endif
+
+                            <div>
+                                <label for="comment">Comment</label>
+                                <textarea name="comment" id="comment" rows="5" cols="5" class="form-control"></textarea>
+                                <input type="hidden" name="post_id" value="{{ $post->id }}" />
                             </div>
                         </div>
                         <div class="form-group">
