@@ -36,7 +36,7 @@ class PostsTableSeeder extends Seeder
 
         $author2 = User::create([
             'name'=>'Kachuipam Rungsung',
-            'email'=>'kachuipam.mac17.du@gmail.com',
+            'email'=>'kachuipam.mca17.du@gmail.com',
             'password'=>Hash::make('password')
         ]);
 

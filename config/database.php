@@ -17,6 +17,14 @@ return [
 
     'default' => env('DB_CONNECTION', 'mysql'),
 
+    //testing
+    'sqlite_testing' => [
+        'driver'   => 'sqlite',
+        'database' => ':memory:',
+        'prefix'   => '',
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Database Connections
